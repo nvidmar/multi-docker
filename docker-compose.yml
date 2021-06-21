@@ -21,7 +21,7 @@ services:
       dockerfile: Dockerfile.dev
       context: ./server
     volumes:
-      - /usr/src/app'/node_modules
+      - /usr/src/app/node_modules
       - ./server:/usr/src/app'
     environment:
       - REDIS_HOST=redis
@@ -37,14 +37,14 @@ services:
       dockerfile: Dockerfile.dev
       context: ./client
     volumes:
-      - /usr/src/app'/node_modules
+      - /usr/src/app/node_modules
       - ./client:/usr/src/app'
   worker:
     build:
       dockerfile: Dockerfile.dev
       context: ./worker
     volumes:
-      - /usr/src/app'/node_modules
+      - /usr/src/app/node_modules
       - ./worker:/usr/src/app'
     environment:
       - REDIS_HOST=redis
