@@ -22,7 +22,7 @@ services:
       context: ./server
     volumes:
       - /usr/src/app/node_modules
-      - ./server:/usr/src/app'
+      - ./server:/usr/src/app
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
@@ -37,15 +37,15 @@ services:
       dockerfile: Dockerfile.dev
       context: ./client
     volumes:
-      - /usr/src/app/node_modules
-      - ./client:/usr/src/app'
+      - /app/node_modules
+      - ./client:/app
   worker:
     build:
       dockerfile: Dockerfile.dev
       context: ./worker
     volumes:
       - /usr/src/app/node_modules
-      - ./worker:/usr/src/app'
+      - ./worker:/usr/src/app
     environment:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
